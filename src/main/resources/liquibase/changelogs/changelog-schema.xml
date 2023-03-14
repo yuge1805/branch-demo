@@ -1,0 +1,25 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="init_20230314" author="yuge">
+        <sql>
+            CREATE TABLE IF NOT EXISTS `lesson` (
+                `id` bigint NOT NULL AUTO_INCREMENT,
+                `name` varchar(255) DEFAULT NULL,
+                `teacherArray` json DEFAULT NULL,
+                PRIMARY KEY (`id`)
+            ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+        </sql>
+    </changeSet>
+
+    <changeSet id="change_20230314" author="yuge">
+        <sql>
+            ALTER TABLE `branch_demo`.`lesson`
+            ADD COLUMN `section` int(0) NULL AFTER `teacherArray`;
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>
