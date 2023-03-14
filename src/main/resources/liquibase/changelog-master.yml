@@ -1,0 +1,6 @@
+databaseChangeLog:
+  - include:
+      file: liquibase/changelogs/changelog-schema.xml
+#  - include:
+#      file: liquibase/changelogs/changelog-init-data.xml
+
